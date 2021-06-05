@@ -1,0 +1,144 @@
+Data Type: 	Description: 	                                                          				Size: 	   Default Value
+boolean 	Represent truth values, can be true (correct) or false (incorrect) 	      				1 bit 	   false
+byte 	    Integers ranging from -128 to 127 	                                      				8 bit 		0
+char 	    Unicode characters e.g. 'a', '\u0041', 'ü', or '\n' 	                  				16 bit 		\u0000
+short 	    Integers ranging from -32768 to 32767 	                                 				16 bit 		0
+int 	    Integers ranging from -2147483648 to 2147483647 	                                    32 bit 		0
+long 	    Integers ranging from -9223372036854775808 to 9223372036854775807 	                    64 bit 		0
+float 	    Floating Point Numbers ranging from -3.4028235E38 to 3.4028235E38 	                    32 bit 		0.0
+double   	Floating Point Numbers ranging from -1.7976931348623157E308 to 1.7976931348623157E308 	64 bit 		0.0 
+ 
+
+
+
+
+
+Access MOdifiers
+
+    public – accessible everywhere
+    protected – accessible in the same package and in sub-classes
+    default – accessible only in the same package
+    private – accessible only in the same class
+
+	The access specifiers can be strictly ordered as below :
+
+    public > protected > package-private (or default) > private
+
+    Class level — Allowed modifiers are public, or package-private (default).
+    Method level — Allowed modifiers are public, private, protected, or package-private (default).
+	
+	
+	
+Java instance initialization sequence flow
+Java instance initializers are code blocks which are executed before the constructor code is executed. These initializers run everytime we create a new object.
+
+Based on above given features, let’s draw an outline how the instance initialization of an object flows.
+
+    Child class constructor is invoked.
+    Child class constructor has first statement as super() (or provided explicit constructor) so parent class constructor is invoked.
+    Parent class’s initializers are executed in sequence of their appearance.
+    Parent class constructor statements are executed.
+    Child class’s initializers are executed in sequence of their appearance.
+    Child class constructor statements are executed.
+	
+	
+	
+Java inner class
+Java inner class is defined inside the body of another class. Java inner class can be declared private, public, protected, or with default access whereas an outer class can have only public or default access.
+	class OuterClass {
+    ...
+		static class StaticNestedClass {Static nested classes do not have access to other members of the enclosing class
+        ...
+		}
+		class InnerClass {Non-static nested classes (inner classes) have access to other members of the enclosing class, even if they are declared private
+        ...
+		}
+	}
+
+	Static nested classes can access only static members of the outer class. A static nested class is the same as any other top-level class and is nested for only packaging convenience.
+	
+	
+	
+	
+	Why Use Nested Classes?
+
+	Compelling reasons for using nested classes include the following:
+
+    It is a way of logically grouping classes that are only used in one place: If a class is useful to only one other class, then it is logical to embed it in that class and keep the two together. Nesting such "helper classes" makes their package more streamlined.
+
+    It increases encapsulation: Consider two top-level classes, A and B, where B needs access to members of A that would otherwise be declared private. By hiding class B within class A, A's members can be declared private and B can access them. In addition, B itself can be hidden from the outside world.
+
+    It can lead to more readable and maintainable code: Nesting small classes within top-level classes places the code closer to where it is used.
+	
+	
+	
+	
+Arrays
+String[] names = {"Alex", "Brian", "Charles", "David"};
+
+// Use arr.clone() method - Recommended
+String[] cloneOfNames = names.clone();
+ 
+// Use Arrays.copyOf() method - Most readable
+String[] copyOfNames = Arrays.copyOf(names, names.length);
+
+String[] partialNames = Arrays.copyOfRange(names, 0, 2);    
+// [Alex, Brian]
+ 
+//Subarray to list
+List<String> namesList = Arrays.asList( Arrays.copyOfRange(names, 2, names.length) ); 
+
+
+
+Array Union  set.addAll(Arrays.asList(firstArray));
+       
+						set.addAll(Arrays.asList(secondArray));
+
+
+
+Array Intersection   set.addAll(Arrays.asList(firstArray));
+     
+							set.retainAll(Arrays.asList(secondArray));
+
+
+ Remove duplicate elements  LinkedHashSet<Integer> linkedHashSet = new LinkedHashSet<>( Arrays.asList(numbers) );
+ 
+ 
+ 
+ ArrayList
+ 
+ArrayList<String> charList = new ArrayList<>(Arrays.asList(("A", "B", "C"));
+Iterator<Integer> iterator = charList.iterator();
+ 
+while(iterator.hasNext()) 
+{
+    System.out.println(iterator.next());
+}
+
+
+
+ArrayList sort() method sorts the list according to the order induced by the specified Comparator instance. All elements in the list must must be mutually Comparable.
+AgeSorter.java
+public class AgeSorter implements Comparator<Employee> 
+{
+    @Override
+    public int compare(Employee e1, Employee e2) {
+        //comparison logic
+    }
+}
+AgeSorter.java
+ArrayList<Employee> employees = new ArrayList<>();
+ 
+employees.add(new Employee(...));
+employees.add(new Employee(...));
+employees.add(new Employee(...));
+ 
+employees.sort(new NameSorter());
+
+
+===============================================================================================================
+
+Classes:
+A class is a blueprint of an application, where you implement methods (to perform certain actions/functionalities) and declare variables (that describe the properties of the application). For example, Payments could be an entire class in itself in the Ola App example you saw earlier.
+
+The whole idea behind classes is to have independent modules in the program, each class representing one particular entity
