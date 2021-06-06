@@ -6,4 +6,10 @@
 //Private: When you declare a variable as private in a class, it signifies that it can be accessed throughout the class but not outside of it.
 
 /*Getter and Setters:
-    used for accessing private variables of the class. So does it make private variable to Public? No beacuse we can have sanity checking or contraints that can be put into setter methods so that variables are assigned only when the pass sanity check.*/
+    used for accessing private variables of the class. Does it make private variable to Public? No beacuse we can have sanity checking or contraints that 
+    can be put into setter methods so that variables are assigned only when the pass sanity check.*/
+
+// Abstraction vs Encapsulation
+/*Abstraction concept makes code more user friendly by hiding implementation part of the class, which makes program more robust where user can use class without thinking of its implementation.    
+
+whereas Encapsulation restricts access for  class variables and methods from  outside the class, which makes program more secure*/
