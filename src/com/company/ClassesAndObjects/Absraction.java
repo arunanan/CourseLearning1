@@ -21,6 +21,10 @@ package com.company.ClassesAndObjects;
         When you try to call static methods using an object, it will give you a warning, but you can still call that method.
         The reason for this is that static methods are common to all the objects and any particular object can call those methods.
          But it is not recommended to call these methods using the objects.*/
+
+/*Abstraction: Abstraction is a principle based on hiding the details of the implementations of classes, and access only certain features/functionalities
+given to the users/other parts of the program. This is done by writing your program using the framework of classes and objects.*/
+
 public class ExampleClass {
     public static float radius = 10f;
     public static void main(String[] args) {
