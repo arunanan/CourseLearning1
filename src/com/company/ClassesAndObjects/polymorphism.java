@@ -14,6 +14,14 @@ package com.company.OOPS;
 
 Note:Having the same parameter list(same number of variables and type) but a different return type for a method will result in a compilation error.*/
 /*  ERROR: Ambiguous method call. Both  add(int,int) in Addition and   add(int, int)   in Addition match*/
+
+ /**The order of access modifiers in the increasing order of their restrictive nature is:
+public > protected > default > private**/
+/*
+A more restrictive access modifier can be converted into a less restrictive access modifier but not vice versa,
+                which means that a protected method can be made public but a public method cannot be made protected.
+        Similarly, in this option, you can override a default method to either public or protected
+because it is less restrictive.*/
 class Addition
 {
     int add(int a, int b)
